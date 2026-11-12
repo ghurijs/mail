@@ -1,0 +1,43 @@
+{
+  "name": "@ghuri/mail",
+  "version": "0.1.0-alpha.0",
+  "description": "Ghuri mail: Django-style email sending (sendMail, EmailMessage, backends for Cloudflare Email, Resend, SMTP, console and tests)",
+  "type": "module",
+  "license": "MIT",
+  "author": "Ghuri contributors",
+  "homepage": "https://github.com/ghurijs/mail#readme",
+  "repository": { "type": "git", "url": "git+https://github.com/ghurijs/mail.git" },
+  "bugs": { "url": "https://github.com/ghurijs/mail/issues" },
+  "keywords": ["ghuri", "django", "email", "mail", "smtp", "resend", "cloudflare", "workers", "email-service"],
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./smtp": { "types": "./dist/smtp.d.ts", "import": "./dist/smtp.js" },
+    "./testing": { "types": "./dist/testing.d.ts", "import": "./dist/testing.js" }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist", "README.md", "LICENSE"],
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check src test",
+    "format": "biome format --write src test"
+  },
+  "peerDependencies": {
+    "@ghuri/core": "^0.1.0-alpha.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.6",
+    "@ghuri/core": "^0.1.0-alpha.1",
+    "@types/node": "^24.0.0",
+    "hono": "^4.13.0",
+    "tsup": "^8.5.1",
+    "typescript": "~5.9.3",
+    "vitest": "^5.1.0"
+  },
+  "publishConfig": { "access": "public", "tag": "next" }
+}
